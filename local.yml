@@ -1,0 +1,14 @@
+
+services:
+  crewai:
+    build:
+      context: .
+      dockerfile: ./compose/local/crewai/Dockerfile
+    image: crewai_image
+    container_name: crewai_container
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.envs/.local/.crewai
+    command: /start
+
