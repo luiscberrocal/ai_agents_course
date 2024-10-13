@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 import sys
+
 from ai_agents_course.crew import AiAgentsCourseCrew, LatestAiDevelopmentCrew
+
 
 # This main file is intended to be a way for your to run your
 # crew locally, so refrain from adding necessary logic into this file.
@@ -12,11 +14,12 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs'
+        'topic': 'AI in Software Development'
     }
     LatestAiDevelopmentCrew().crew().kickoff(inputs=inputs)
 
-   #  AiAgentsCourseCrew().crew().kickoff(inputs=inputs)
+
+#  AiAgentsCourseCrew().crew().kickoff(inputs=inputs)
 
 
 def train():
@@ -24,33 +27,39 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs"
+        "topic": "AI in Software Development"
     }
     try:
-        AiAgentsCourseCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
+        LatestAiDevelopmentCrew().crew().train(n_iterations=int(sys.argv[1]), filename=sys.argv[2], inputs=inputs)
 
     except Exception as e:
         raise Exception(f"An error occurred while training the crew: {e}")
+
 
 def replay():
     """
     Replay the crew execution from a specific task.
     """
     try:
-        AiAgentsCourseCrew().crew().replay(task_id=sys.argv[1])
+        LatestAiDevelopmentCrew().crew().replay(task_id=sys.argv[1])
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
 
-def test():
-    """
-    Test the crew execution and returns the results.
-    """
-    inputs = {
-        "topic": "AI LLMs"
-    }
-    try:
-        AiAgentsCourseCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
 
-    except Exception as e:
-        raise Exception(f"An error occurred while replaying the crew: {e}")
+# def test():
+#     """
+#     Test the crew execution and returns the results.
+#     """
+#     inputs = {
+#         "topic": "AI LLMs"
+#     }
+#     try:
+#         LatestAiDevelopmentCrew().crew().test(n_iterations=int(sys.argv[1]), openai_model_name=sys.argv[2], inputs=inputs)
+#
+#     except Exception as e:
+#         raise Exception(f"An error occurred while replaying the crew: {e}")
+
+
+if __name__ == '__main__':
+    run()
