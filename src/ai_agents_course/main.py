@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-from ai_agents_course.crew import AiAgentsCourseCrew
+from ai_agents_course.crew import AiAgentsCourseCrew, LatestAiDevelopmentCrew
 
 # This main file is intended to be a way for your to run your
 # crew locally, so refrain from adding necessary logic into this file.
@@ -14,7 +14,9 @@ def run():
     inputs = {
         'topic': 'AI LLMs'
     }
-    AiAgentsCourseCrew().crew().kickoff(inputs=inputs)
+    LatestAiDevelopmentCrew().crew().kickoff(inputs=inputs)
+
+   #  AiAgentsCourseCrew().crew().kickoff(inputs=inputs)
 
 
 def train():
