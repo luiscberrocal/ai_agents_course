@@ -12,3 +12,11 @@ services:
       - ./.envs/.local/.crewai
     command: /start
 
+  ollama:
+    build:
+      context: .
+      dockerfile: ./compose/local/ollama/Dockerfile
+    image: ollama_image
+    container_name: ollama_container
+    volumes:
+      - .:/app:z
